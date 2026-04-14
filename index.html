@@ -117,6 +117,210 @@
                 animation: fadeIn 0.3s ease-in-out;
             }
         }
+
+        /* ── FEATURED PROJECT CARDS ── */
+        .featured-card {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
+            margin-bottom: 3rem;
+        }
+        .dark .featured-card {
+            background: #1f2937;
+            border-color: rgba(255,255,255,0.07);
+        }
+        .featured-card:hover {
+            box-shadow: 0 12px 50px rgba(0,0,0,0.14);
+            transform: translateY(-4px);
+        }
+        .featured-card__img-wrap {
+            flex: 0 0 42%;
+            position: relative;
+            overflow: hidden;
+            min-height: 420px;
+        }
+        .featured-card__img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .featured-card:hover .featured-card__img-wrap img {
+            transform: scale(1.04);
+        }
+        .featured-card__img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(2,132,199,0.18) 0%, transparent 60%);
+        }
+        .featured-card__content {
+            flex: 1;
+            padding: 2.5rem 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        /* Reverse layout for even cards */
+        .featured-card.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Category accent stripe */
+        .cat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .cat-web    { background: #d1fae5; color: #065f46; }
+        .dark .cat-web { background: #064e3b; color: #6ee7b7; }
+        .cat-data   { background: #dbeafe; color: #1e40af; }
+        .dark .cat-data { background: #1e3a5f; color: #93c5fd; }
+        .cat-ml     { background: #ede9fe; color: #5b21b6; }
+        .dark .cat-ml { background: #3b0d6e; color: #c4b5fd; }
+        .cat-comp   { background: #fef3c7; color: #92400e; }
+        .dark .cat-comp { background: #451a03; color: #fcd34d; }
+
+        /* Process steps */
+        .process-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin: 1.2rem 0;
+        }
+        .process-step {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+        .dark .process-step {
+            background: #374151;
+            color: #d1d5db;
+            border-color: #4b5563;
+        }
+        .process-step .step-num {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #0284c7;
+            color: #fff;
+            font-size: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .process-arrow {
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        /* Impact metrics */
+        .impact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1.2rem 0;
+        }
+        .impact-badge {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 1px solid #bae6fd;
+            border-radius: 10px;
+            padding: 8px 14px;
+            text-align: center;
+        }
+        .dark .impact-badge {
+            background: linear-gradient(135deg, #0c2d48, #1e3a5f);
+            border-color: #1d4ed8;
+        }
+        .impact-badge .val {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0284c7;
+            display: block;
+            line-height: 1;
+        }
+        .dark .impact-badge .val { color: #60a5fa; }
+        .impact-badge .lbl {
+            font-size: 0.65rem;
+            color: #64748b;
+            font-weight: 500;
+            display: block;
+            margin-top: 2px;
+        }
+        .dark .impact-badge .lbl { color: #9ca3af; }
+
+        /* Section divider between featured and grid */
+        .projects-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+        .projects-divider::before,
+        .projects-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1);
+        }
+        .dark .projects-divider::before,
+        .dark .projects-divider::after {
+            background: linear-gradient(to right, transparent, #374151);
+        }
+        .projects-divider::after {
+            background: linear-gradient(to left, transparent, #cbd5e1);
+        }
+        .dark .projects-divider::after {
+            background: linear-gradient(to left, transparent, #374151);
+        }
+
+        /* Scroll reveal for featured cards */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .featured-card,
+            .featured-card.reverse {
+                flex-direction: column;
+            }
+            .featured-card__img-wrap {
+                flex: none;
+                min-height: 240px;
+                max-height: 280px;
+            }
+            .featured-card__content {
+                padding: 1.8rem 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -697,7 +901,7 @@
         <!-- Portfolio Section -->
         <section id="portfolio" class="py-16">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center relative">
                     <span class="relative inline-block">
                         My Projects
                         <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-600 dark:bg-primary-400"></span>
@@ -735,7 +939,11 @@
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">DATA ANALYST & FULL-STACK DEVELOPER INTERN: BANYUMAS POLICY INTEL (AI-POWERED POLICY SIMULATION)</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                Developed an AI-powered policy simulation platform using TypeScript, React.js, and Tailwind CSS to enable government officials to visualize regional data and assess policy impacts effectively. 
+                                Effective public policy requires more than just looking at historical data; it demands foresight. To bridge the gap between raw regional statistics and actionable governance, I developed the "Banyumas Policy Intel" platform an interactive, AI driven decision-support system. My core objective was to shift the paradigm from reactive poverty monitoring to proactive resource optimization for the local government.
+
+By integrating an interactive geospatial map, the platform immediately highlights critical zones, categorizing sub-districts by their poverty severity. However, the true strategic value of this application lies in its predictive simulation engine. I implemented a linear regression model that allows policymakers to perform real-time "what if" analyses. For instance, leaders can adjust interface sliders to simulate the exact impact of building new health facilities or schools on a specific sub district's (like Purwokerto Barat) poverty rate.
+
+This interactive tool empowers local governments to justify capital expenditures, forecast the social ROI on public infrastructure, and strategically allocate budgets to maximize community impact. Ultimately, this project demonstrates my ability to fuse web development, geospatial analysis, and predictive modeling to build practical solutions for complex, real-world socio-economic challenges.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">TypeScript, React.js, and Tailwind CSS </span>
@@ -754,7 +962,11 @@
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Data Visualisation Competition 2025: Climate Co-Benefits Dashboard (The Hidden Value of Climate Action)</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                This interactive dashboard visualizes the co-benefits of climate policies (such as improved air quality, health, and infrastructure) across various municipalities in the UK (Glasgow, etc.). It uses advanced data storytelling techniques to make complex economic data accessible and engaging.
+                                In today's corporate and governmental landscape, climate action is no longer evaluated solely on emission reductions; stakeholders want to understand the holistic value creation, often referred to as "co-benefits." To address this need, I developed a Streamlit based web application designed to track and quantify the secondary socio-economic advantages of green initiatives.
+
+The core challenge was translating complex, multi-layered environmental datasets into an intuitive story. I engineered an interactive platform where users can explore different climate mitigation scenarios. Instead of just showing tons of carbon saved, the dashboard dynamically visualizes the broader impacts such as improvements in public health, potential economic growth, and social resilience.
+
+From a business perspective, this tool is highly relevant for ESG (Environmental, Social, and Governance) reporting and green finance. By illuminating the full ROI of sustainability projects, this application empowers policymakers, NGOs, and investors to make data-backed decisions that benefit both the planet and the economy.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Core: Streamlit (Python)
@@ -777,7 +989,11 @@ Animation: Streamlit Lottie </span>
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Indonesia Deforestation Monitoring & Prediction Dashboard</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                Developed an AI-powered policy simulation platform using TypeScript, React.js, and Tailwind CSS to enable government officials to visualize regional data and assess policy impacts effectively. 
+                                Indonesia holds some of the world's most vital rainforest ecosystems, making the monitoring of its land use changes a global priority. To bring visibility to this critical issue, I developed the "Indonesia Deforestation Monitor," an interactive Streamlit application designed to analyze historical forest loss across the archipelago.
+
+My goal was to move beyond static environmental reports and create an exploratory tool. By processing complex time series and regional data, I built a dashboard that allows users to pinpoint deforestation hotspots and trace the trajectory of forest loss over the years. The interactive nature of the app enables users to filter down to specific provinces to see localized trends.
+
+Strategically, this platform is more than just an environmental tracker; it's a risk management tool. In an era where global supply chain transparency is heavily scrutinized, tools like this are essential for evaluating public conservation policies and helping corporations ensure zero-deforestation compliance within their sourcing regions. This project showcases my ability to leverage Python to turn critical environmental data into accessible, impactful insights.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">TypeScript, React.js, and Tailwind CSS </span>
@@ -798,11 +1014,17 @@ Animation: Streamlit Lottie </span>
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Netflix Content Dashboard</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                Interactive Tableau dashboard analyzing Netflix's content library, genres, and production trends.
+                               To better understand the content strategy driving subscriber growth and retention for the world's leading streaming service, I designed this interactive Netflix data dashboard. Instead of simply looking at raw numbers, I wanted to create a visual narrative that answers key business questions: what content formats drive engagement, which global markets are heavily targeted, and how has capital investment in the catalog evolved over time.
+
+The process started with rigorous data cleaning to ensure high data integrity for stakeholder reporting. For the dashboard's UI, I specifically chose a dark-mode aesthetic with red highlights to mirror the brand identity while ensuring that critical KPIs pop out for quick executive decision making. The layout is structured to guide the viewer from macro to micro insights: starting with a global view of content origins to assess international market penetration, moving into format distributions (where movies dominate at 68%), and breaking down target demographics (TV-MA) alongside high-volume genres (led by Documentaries).
+
+A critical business insight emerged when building the historical area chart, which visually captures Netflix's aggressive expansion phase beginning in 2015 a trend that perfectly aligns with their strategic, capital intensive shift toward producing original content. This project not only strengthened my technical data visualization skills but also my ability to design user-centric dashboards that translate complex datasets into strategic, bottom-line business insights.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Tableau</span>
                                 <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Business Intelligence</span>
+                                <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Python, SQL</span>
+                                <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Data Visualization</span>
                             </div>
                             <a href="https://public.tableau.com/app/profile/restu.firmansyah/viz/EDA_DASHBOARD-Netflix/Netflix" target="_blank"
                                 class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
@@ -819,18 +1041,38 @@ Animation: Streamlit Lottie </span>
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Data Professional Global Survey Dashboard</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                An interactive dashboard analyzing career trends of 630 data professionals worldwide. The project visualizes the correlation between programming languages ​​(dominated by Python), perceived salary by role, and job satisfaction levels. The tool is designed to provide a transparent view of the current data industry landscape using Power BI.
+                                In this project, I developed an interactive Data Professional Survey Dashboard to analyze trends, preferences, and satisfaction levels among data professionals. Using survey data from 630 respondents with an average age of 29.87, I performed data cleaning, transformation, and visualization in Power BI. The analysis revealed that Python is the most preferred programming language by a significant margin, followed by R and other languages. In terms of geography, the majority of respondents come from the United States, indicating a strong representation in the dataset. Salary analysis shows that Data Scientists and Data Architects earn the highest average salaries, while roles like students and database positions earn comparatively lower. Additionally, insights into work-life balance (5.74/10) and salary satisfaction (4.27/10) indicate moderate satisfaction levels among professionals. This project demonstrates my ability to analyze survey data, extract meaningful insights, and present them through clear and impactful visualizations to support understanding of industry trends.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                
-                                <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">Strategy</span>
+                                <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">POWER BI, Business Intelligence</span>
                             </div>
                             <a href="https://app.powerbi.com/groups/me/reports/6c0ddbae-3cd8-4d96-869f-f72660ef06a6/e9fc6aec70f9efa9d7a4?experience=power-bi" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
                                 <i class="fab fa-github mr-2"></i> View Analysis
                             </a>
                         </div>
-
                     </div>
+                    <!-- Project 7 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
+                        <a href="Pbi2.png" data-lightbox="portfolio" data-title="E-commerce Expansion Analysis">
+                            <img src="Pbi2.png" alt="E-commerce Analysis" class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">RETAIL SALES PERFORMACNE DAHBOARD</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                              In this project, I developed an interactive Retail Sales Performance Dashboard to analyze key factors influencing revenue across different outlet types, sizes, and locations. Using a dataset of over 17,000 items, I performed data cleaning, modeling, and analysis in Power BI with DAX to generate meaningful insights. The analysis revealed that medium-sized outlets contribute the highest share of revenue (~42%), Tier 3 locations have the largest distribution of outlets, and product categories such as fruits and snacks dominate total sales. Additionally, sales trends showed an early peak followed by a relatively stable pattern with a recent decline. Based on these findings, I provided business recommendations including focusing expansion on medium outlets, optimizing high-performing product categories, and evaluating lower-performing locations. This project demonstrates my ability to transform raw data into actionable insights and support data-driven decision-making through effective visualization.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                               
+                                <span class="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-xs">POWER BI, Business Intelligence</span>
+                            </div>
+                            <a href="https://app.powerbi.com/groups/me/reports/6c0ddbae-3cd8-4d96-869f-f72660ef06a6/e9fc6aec70f9efa9d7a4?experience=power-bi" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> View Analysis
+                            </a>
+                        </div>
+                    </div>
+
+
                     <!-- Project 7 -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p7.png" data-lightbox="portfolio" data-title="E-commerce Expansion Analysis">
@@ -1017,85 +1259,7 @@ Animation: Streamlit Lottie </span>
         </section>
 
 
-        <!-- Investment Section -->
-        <section id="investment" class="py-16 bg-white dark:bg-gray-900">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-                    <span class="relative inline-block">
-                        Investment & Financial Analysis
-                        <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-600 dark:bg-primary-400"></span>
-                    </span>
-                </h2>
-
-                <!-- Key Metrics -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow border-b-4 border-blue-500">
-    <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">IDR 300M+</div>
-    <div class="text-sm text-gray-600 dark:text-gray-300 font-medium">Portfolio Size</div>
-    <div class="text-xs text-gray-500 mt-1">Assets Under Management</div>
-</div>
-                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow border-b-4 border-green-500">
-                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">IDR 227M+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-300 font-medium">Realized Gain</div>
-                        <div class="text-xs text-gray-500 mt-1">Total Optimization</div>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow border-b-4 border-blue-500">
-                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">70.73%</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-300 font-medium">Win Rate</div>
-                        <div class="text-xs text-gray-500 mt-1">Consistent Strategy</div>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow border-b-4 border-purple-500">
-                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">2.58</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-300 font-medium">Profit Factor</div>
-                        <div class="text-xs text-gray-500 mt-1">Risk Management</div>
-                    </div>
-                </div>
-
-                <!-- Analysis & Visuals -->
-                <div class="flex flex-col gap-8 mb-12">
-                     <div class="w-full">
-                        <h3 class="text-2xl font-bold mb-4">4 Years Of Active Experience In Capital Markets</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                          This portfolio reflects a datadriven approach to evaluating business prospects and company performance within financial markets, with a strong focus on rational, research based decision making through both fundamental and quantitative analysis.
-
-It serves as a platform to continuously sharpen my skills in business analysis, risk assessment, and strategic thinking all of which closely align with professional industry standards. The primary objective of this work is to foster continuous learning and disciplined decision making, rather than focusing solely on financial outcomes.
-                        </p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Portfolio Management:</strong> Actively managed a personal equity portfolio exceeding <strong> IDR 300+ Million </strong>, executing data driven trading and investing strategies based on deep macro and microeconomic analysis.</span>
-                            </li>
-                            <li class="flex items-start">
-    <span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>
-    <span class="text-gray-600 dark:text-gray-300">
-        <strong>Cumulative Return:</strong> Achieved a return of 183.40%, with benchmark comparison to IHSG at 26.56%.
-    </span>
-</li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Techinal Analysis:</strong> Using technical indicators to identify trading opportunities.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Risk Management:</strong> maintaining a high Profit Factor (2.58) by cutting losses early and letting winners run.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Macro Analysis:</strong> Correlating global economic indicators with local sector performance.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                        <div class="w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-                             <a href="invest2.png" data-lightbox="investment" data-title="Trade Summary Statistics">
-                                <img src="invest2.png" alt="Trade Summary Statistics" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+       
         <!-- Certifications Section -->
         <section class="py-16 bg-gray-100 dark:bg-gray-800 rounded-xl">
             <div class="max-w-6xl mx-auto px-4">
