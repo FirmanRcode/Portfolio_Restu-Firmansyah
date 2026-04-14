@@ -706,19 +706,19 @@
                 
                 <div class="mb-8 flex justify-center">
                     <div class="inline-flex rounded-md shadow-sm" role="group">
-                        <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-primary-600 text-white">
+                        <button type="button" onclick="filterProjects('all', this)" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-primary-600 text-white">
                             All Projects
                         </button>
-                        <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <button type="button" onclick="filterProjects('data-analysis', this)" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                             Data Analysis
                         </button>
-                        <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <button type="button" onclick="filterProjects('data-science', this)" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                             Data Science
                         </button>
-                        <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <button type="button" onclick="filterProjects('web-development', this)" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                             Web Development
                         </button>
-                        <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <button type="button" onclick="filterProjects('ui-ux', this)" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                             UI/UX Design
                         </button>
                     </div>
@@ -728,7 +728,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project 12 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="web-development data-science data-analysis">
                         <a href="p12.png" data-lightbox="portfolio" data-title="Portfolio Website">
                             <img src="p12.png" alt="Portfolio Website" class="w-full h-48 object-cover">
                         </a>
@@ -747,7 +747,7 @@
                     </div>
 
                     <!-- Project 13 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-science data-analysis">
                         <a href="p13.png" data-lightbox="portfolio" data-title="Portfolio Website">
                             <img src="p13.png" alt="Portfolio Website" class="w-full h-48 object-cover">
                         </a>
@@ -770,7 +770,7 @@ Animation: Streamlit Lottie </span>
                     </div>
                 
                     <!-- Project 14 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="web-development data-science data-analysis">
                         <a href="p14.png" data-lightbox="portfolio" data-title="Portfolio Website">
                             <img src="p14.png" alt="Portfolio Website" class="w-full h-48 object-cover">
                         </a>
@@ -791,7 +791,7 @@ Animation: Streamlit Lottie </span>
                    
                     
                     <!-- Project 3 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p3.png" data-lightbox="portfolio" data-title="Netflix Content Dashboard">
                             <img src="p3.png" alt="Netflix Content Dashboard" class="w-full h-48 object-cover">
                         </a>
@@ -812,7 +812,7 @@ Animation: Streamlit Lottie </span>
 
                     </div>
                     <!-- Project 7 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="poweribi_1.png" data-lightbox="portfolio" data-title="E-commerce Expansion Analysis">
                             <img src="poweribi_1.png" alt="E-commerce Analysis" class="w-full h-48 object-cover">
                         </a>
@@ -832,7 +832,7 @@ Animation: Streamlit Lottie </span>
 
                     </div>
                     <!-- Project 7 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p7.png" data-lightbox="portfolio" data-title="E-commerce Expansion Analysis">
                             <img src="p7.png" alt="E-commerce Analysis" class="w-full h-48 object-cover">
                         </a>
@@ -852,7 +852,7 @@ Animation: Streamlit Lottie </span>
                     </div>
 
                     <!-- New Project: LMS Jatilan Ngapak -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="web-development ui-ux">
                         <a href="LMSJatilanNgapak.png" data-lightbox="portfolio" data-title="LMS Jatilan Ngapak Banyumas">
                             <img src="LMSJatilanNgapak.png" alt="LMS Jatilan Ngapak" class="w-full h-48 object-cover">
                         </a>
@@ -872,7 +872,7 @@ Animation: Streamlit Lottie </span>
                         </div>
                     </div>
  <!-- Project 1 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p1.png" data-lightbox="portfolio" data-title="Amazon Sales Data Analysis">
                             <img src="p1.png" alt="Amazon Sales Data Analysis" class="w-full h-48 object-cover">
                         </a>
@@ -894,7 +894,7 @@ Animation: Streamlit Lottie </span>
                     </div>
                     
                     <!-- Project 2 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p2.png" data-lightbox="portfolio" data-title="Music Industry Sales Analysis">
                             <img src="p2.png" alt="Music Industry Sales Analysis" class="w-full h-48 object-cover">
                         </a>
@@ -915,7 +915,7 @@ Animation: Streamlit Lottie </span>
                         </div>
                     </div>
                     <!-- Project 4 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-science">
                         <a href="p4.png" data-lightbox="portfolio" data-title="Retail Sales Prediction ML">
                             <img src="p4.png" alt="Retail Sales Prediction" class="w-full h-48 object-cover" onerror="this.src='ml.png'">
                         </a>
@@ -937,7 +937,7 @@ Animation: Streamlit Lottie </span>
                     </div>
                     
                     <!-- Project 5 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="web-development">
                         <a href="yt.png" data-lightbox="portfolio" data-title="Employee Management System">
                             <img src="yt.png" alt="Employee Management System" class="w-full h-48 object-cover">
                         </a>
@@ -960,7 +960,7 @@ Animation: Streamlit Lottie </span>
                     
                     
                     <!-- Project 6 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="ui-ux">
                           <a href="figma.png" data-lightbox="portfolio" data-title="NUMPAK - Luxury Car Platform">
                             <img src="figma.png" alt="NUMPAK - Luxury Car Platform" class="w-full h-48 object-cover">
                         </a>
@@ -986,7 +986,7 @@ Animation: Streamlit Lottie </span>
                  
 
                     <!-- Project 11 -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover project-card" data-category="data-analysis">
                         <a href="p11.png" data-lightbox="portfolio" data-title="Real Estate Valuation">
                             <img src="p11.png" alt="Real Estate Valuation" class="w-full h-48 object-cover">
                         </a>
@@ -1750,6 +1750,33 @@ It serves as a platform to continuously sharpen my skills in business analysis, 
             'positionFromTop': 50,
             'enableKeyboard': true
         });
+
+        // Portfolio Filtering
+        function filterProjects(category, btnElement) {
+            // Update active button styling
+            const buttons = btnElement.parentElement.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary-600', 'text-white');
+                if (!btn.classList.contains('hover:bg-gray-100')) {
+                    btn.classList.add('hover:bg-gray-100', 'dark:hover:bg-gray-700');
+                }
+            });
+            
+            // Set active class
+            btnElement.classList.add('bg-primary-600', 'text-white');
+            btnElement.classList.remove('hover:bg-gray-100', 'dark:hover:bg-gray-700');
+
+            // Filter project cards
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                const categories = project.getAttribute('data-category');
+                if (category === 'all' || (categories && categories.includes(category))) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 
